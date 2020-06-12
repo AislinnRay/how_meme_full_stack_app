@@ -1,5 +1,6 @@
 module.exports = {
-    addFav: (req, res) => {
+    addFav: async (req, res) => {
+        const db = req.app.get('db')
         if(!req.session.favorited){
             req.session.favorited = []
             req.session.favorited.push(req.body)
